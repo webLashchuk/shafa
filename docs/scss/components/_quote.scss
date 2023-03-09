@@ -1,0 +1,28 @@
+.quote {
+    background-image: url('../images/pattern-bg.svg');
+    padding: 100px 0 80px;
+
+    &__text {
+        position: relative;
+        max-width: 1060px;
+        padding-left: 120px;
+        margin: 0 auto;
+
+        &::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: -30px;
+            width: 90px;
+            height: 90px;
+            mask-image: url('../images/sprite.svg#quote-icon');
+            background-color: $icon;
+        }
+    }
+
+    & p {
+        &:not(:last-child) {
+            margin-bottom: 25px;
+        }
+    }
+}

@@ -19,7 +19,8 @@
     "gulp-svg-sprite": "^2.0.1",
     "gulp-uglify": "^3.0.2",
     "jquery": "^3.6.1",
-    "sass": "^1.55.0"
+    "sass": "^1.55.0",
+    "swiper": "^9.1.0"
   },
   "dependencies": {
     "del": "^6.1.1"
