@@ -7,9 +7,15 @@
         width: 100%;
         border-radius: 80px;
         background-color: $purple;
-        padding: 15px 25px;
+        padding: 10px 25px 15px;
         margin: 0 auto;
         margin-bottom: 85px;
+    }
+
+    &__item {
+        &:not(:last-child) {
+            margin-bottom: 50px;
+        }
     }
 }
 
@@ -166,133 +172,135 @@
 
 .slider {
     overflow: hidden;
-
-    & .swiper-container {
-        width: 100%;
-        height: 100%;
+  
+    & .slider__thumbs {
+      width: 100%;
+      height: 772px;
     }
-
+  
     &__flex {
-        display: flex;
-        align-items: flex-start;
+      position: relative;
+      display: flex;
+      align-items: flex-start;
     }
-
+  
     &__col {
-        position: relative;
-        display: flex;
-        flex-direction: column;
-        width: 122px;
-        margin-right: 10px;
+      display: flex;
+      flex-direction: column;
+      width: 122px;
+      margin-right: 10px;
     }
-
+  
     &__prev,
     &__next {
+      position: absolute;
+      cursor: pointer;
+      mask-repeat: no-repeat;
+      width: 122px;
+      height: 100px;
+      z-index: 3;
+      left: 0;
+  
+      &::before {
+        content: "";
         position: absolute;
-        cursor: pointer;
-        mask-repeat: no-repeat;
-        width: 100%;
-        height: 100px;
-        z-index: 2;
+        width: 40px;
+        height: 40px;
+        background-color: $primary;
         left: 50%;
         transform: translateX(-50%);
-
-        &::before {
-            content: "";
-            position: absolute;
-            width: 40px;
-            height: 40px;
-            background-color: $primary;
-            left: 50%;
-            transform: translateX(-50%);
-        }
+      }
     }
-
+  
     &__prev {
-        background: linear-gradient($white, transparent);
-
-        &::before {
-            mask-image: url('../images/sprite.svg#arrow-up');
-        }
+      top: 0;
+      background: linear-gradient($white, transparent);
+  
+      &::before {
+        mask-image: url("../images/sprite.svg#arrow-up");
+      }
     }
-
+  
     &__next {
+      bottom: 0;
+      background: linear-gradient(transparent, $white);
+  
+      &::before {
         bottom: 0;
-        background: linear-gradient(transparent, $white);
-
-        &::before {
-            bottom: 0;
-            mask-image: url('../images/sprite.svg#arrow-down');
-        }
+        mask-image: url("../images/sprite.svg#arrow-down");
+      }
     }
-
+  
     &__prev,
     &__next {
-        outline: transparent;
+      outline: transparent;
     }
-
+  
     &__thumbs {
-        overflow: hidden;
-        height: 772px;
+      overflow: hidden;
+      height: 772px;
     }
-
+  
     &__thumbs .slider__image {
-        transition: background-color .25s, opacity .25s;
-        cursor: pointer;
-
-        &::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-color: rgba(0, 0, 0, 0.5);
-            opacity: 1;
-        }
-
-        &:hover {
-            opacity: 0.5;
-        }
-    }
-
-    &__images {
-        height: 772px;
-        width: 512px;
-    }
-
-    &__images .slider__image img {
-        transition: transform 1s;
-
-        &:hover {
-            transform: scale(1.1);
-        }
-    }
-
-    &__image {
-        width: 100%;
-        height: 100%;
-        overflow: hidden;
-    }
-
-    &__image img {
-        display: block;
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-    }
-
-    .swiper-slide-thumb-active .slider__image {
+      transition: background-color 0.25s, opacity 0.25s;
+      cursor: pointer;
+  
+      &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(0, 0, 0, 0.5);
         opacity: 1;
-
-        &::before {
-            background-color: transparent;
-        }
+      }
+  
+      &:hover {
+        opacity: 0.5;
+      }
     }
-
+  
+    &__images {
+      position: static;
+      height: 772px;
+      width: 512px;
+      overflow: visible;
+    }
+  
+    &__images .slider__image img {
+      transition: transform 1s;
+  
+      &:hover {
+        transform: scale(1.1);
+      }
+    }
+  
+    &__image {
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+    }
+  
+    &__image img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  
+    .swiper-slide-thumb-active .slider__image {
+      opacity: 1;
+  
+      &::before {
+        background-color: transparent;
+      }
+    }
+  
     .swiper-button-disabled {
-        opacity: 0;
+      opacity: 0;
     }
-}
+  }
 
 
 

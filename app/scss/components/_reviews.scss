@@ -1,0 +1,80 @@
+.reviews {
+    padding: 75px 0 70px;
+
+    &__title {
+        width: fit-content;
+        position: relative;
+        padding-right: 95px;
+        margin: 0 auto;
+        margin-bottom: 80px;
+
+        &::after {
+            @extend %pseudo;
+            top: 75%;
+            right: 0;
+            width: 65px;
+            height: 84px;
+            background-image: url('../images/sprite.svg#heart-icon');
+            background-repeat: no-repeat;
+        }
+    }
+
+    &__list {
+        max-width: 1100px;
+        height: auto;
+        color: $white;
+        margin: 0 auto;
+    }
+
+    &__item {
+        position: relative;
+        max-width: 515px;
+        background-color: $reviews;
+        border-radius: 35px;
+        padding: 20px 35px;
+
+        &::before {
+            content: "";
+            position: absolute;
+            bottom: -40px;
+            right: 50px;
+            background-color: inherit;
+            height: 50px;
+            width: 60px;
+            clip-path: polygon(69% 6%, 8% 6%, 93% 88%);
+            border-radius: 50%;
+        }
+
+        &--left {
+            margin-right: 60px;
+
+            &::before {
+                transform: scaleX(-1);
+                left: 50px;
+            }
+        }
+
+        &:not(:last-child) {
+            margin-bottom: 60px;
+        }
+
+        blockquote {
+            margin-bottom: 15px;
+        }
+    }
+
+    &__author {
+        display: inline-block;
+        font-weight: 700;
+    }
+
+    &__icon {
+        position: absolute;
+        width: 65px;
+        height: 65px;
+        background-repeat: no-repeat;
+        border-radius: 50%;
+        right: -35px;
+        bottom: 20px;
+    }
+}

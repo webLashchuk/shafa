@@ -7,17 +7,13 @@
         border: 2px dashed $purple;
     }
 
-    &__title-box {
+    &__title {
         position: absolute;
         top: -50px;
         left: 50%;
         transform: translateX(-50%);
         background-color: $white;
         padding: 20px 30px;
-    }
-
-    &__title {
-        position: relative;
     }
 
     &__list {

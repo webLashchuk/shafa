@@ -1,42 +1,42 @@
 $(function () {
 
-    const sliderThumbs = new Swiper('.slider__thumbs .swiper-container', { // ищем слайдер превью по селектору
+    const sliderThumbs = new Swiper('.slider__thumbs', { 
         // задаем параметры
-        direction: 'vertical', // вертикальная прокрутка
-        slidesPerView: 4, // показывать по 3 превью
-        spaceBetween: 4, // расстояние между слайдами
-        navigation: { // задаем кнопки навигации
-            nextEl: '.slider__next', // кнопка Next
-            prevEl: '.slider__prev' // кнопка Prev
+        direction: 'vertical',
+        slidesPerView: 4, 
+        spaceBetween: 4, 
+        navigation: { 
+            nextEl: '.slider__next', 
+            prevEl: '.slider__prev' 
         },
-        freeMode: true, // при перетаскивании превью ведет себя как при скролле
+        freeMode: true, 
         mousewheel: true,
-        breakpoints: { // условия для разных размеров окна браузера
-            0: { // при 0px и выше
-                direction: 'horizontal', // горизонтальная прокрутка
+        breakpoints: { 
+            0: { 
+                direction: 'horizontal',
             },
-            768: { // при 768px и выше
-                direction: 'vertical', // вертикальная прокрутка
+            768: { 
+                direction: 'vertical', 
             }
         }
     });
     // Инициализация слайдера изображений
-    const sliderImages = new Swiper('.slider__images .swiper-container', { // ищем слайдер превью по селектору
+    const sliderImages = new Swiper('.slider__images', { 
         // задаем параметры
-        direction: 'vertical', // вертикальная прокрутка
-        slidesPerView: 1, // показывать по 1 изображению
-        spaceBetween: 32, // расстояние между слайдами
+        direction: 'vertical', 
+        slidesPerView: 1, 
+        spaceBetween: 32, 
         mousewheel: true,
-        grabCursor: true, // менять иконку курсора
-        thumbs: { // указываем на превью слайдер
-            swiper: sliderThumbs // указываем имя превью слайдера
+        grabCursor: true, 
+        thumbs: { 
+            swiper: sliderThumbs 
         },
-        breakpoints: { // условия для разных размеров окна браузера
-            0: { // при 0px и выше
-                direction: 'horizontal', // горизонтальная прокрутка
+        breakpoints: { 
+            0: { 
+                direction: 'horizontal', 
             },
-            768: { // при 768px и выше
-                direction: 'vertical', // вертикальная прокрутка
+            768: { 
+                direction: 'vertical', 
             }
         }
     });

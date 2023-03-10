@@ -22,6 +22,19 @@
 
     &__logo {
         margin: 0 auto;
+        transition: transform .5s;
+
+        &:focus {
+            outline: transparent;
+        }
+
+        &:hover {
+            transform: scale(1.1);
+        }
+
+        &:active {
+            transform: scale(0.9);
+        }
     }
 }
 
@@ -52,6 +65,19 @@
             height: 18px;
             mask-image: url('../images/sprite.svg#call-icon');
             background-color: $primary;
+            transition: background-color .3s;
+        }
+
+        &:hover {
+            &::before {
+                background-color: $accent;
+            }
+        }
+
+        &:active {
+            &::before {
+                background-color: $secondary;
+            }
         }
     }
 }

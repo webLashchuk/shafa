@@ -11,6 +11,12 @@
         margin: 0 auto;
         margin-bottom: 85px;
     }
+
+    &__item {
+        &:not(:last-child) {
+            margin-bottom: 50px;
+        }
+    }
 }
 
 .product {
@@ -167,9 +173,9 @@
 .slider {
     overflow: hidden;
 
-    & .swiper-container {
+    & .slider__thumbs {
         width: 100%;
-        height: 100%;
+        height: 772px;
     }
 
     &__flex {

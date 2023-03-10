@@ -1,12 +1,16 @@
 .service {
     color: $white;
-    background-image: url('../images/service-bg.jpg');
     @extend %background;
     background-position: bottom center;
     box-shadow: inset 0 0 0 1500px rgba(0, 0, 0, 0.5);
     padding: 60px 0;
 
+    &--quote {
+        padding: 170px 0;
+    }
+
     &__title {
+        color: $white;
         margin-bottom: 60px;
     }
 
@@ -57,5 +61,12 @@
         &--delivery {
             max-width: 260px;
         }
+    }
+
+    &__slogan {
+        max-width: 1040px;
+        text-align: center;
+        font-size: 40px;
+        margin: 0 auto;
     }
 }
