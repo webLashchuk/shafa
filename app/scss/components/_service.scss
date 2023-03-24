@@ -7,6 +7,14 @@
 
     &--quote {
         padding: 170px 0;
+
+        @include mq('tablet-2') {
+            padding: 100px 0;
+        }
+
+        @include mq('tablet-2') {
+            padding: 60px 0;
+        }
     }
 
     &__title {
@@ -18,6 +26,11 @@
         display: grid;
         grid-template-columns: repeat(4, 1fr);
         justify-items: center;
+
+        @include mq('tablet-2') {
+            grid-template-columns: 1fr;
+            grid-gap: 35px;
+        }
     }
 
     &__item {
@@ -68,5 +81,17 @@
         text-align: center;
         font-size: 40px;
         margin: 0 auto;
+        
+        @include mq('tablet-2') {
+            font-size: 34px;
+        }
+
+        @include mq('tablet') {
+            font-size: 30px;
+        }
+
+        @include mq('phone') {
+            font-size: 28px;
+        }
     }
 }

@@ -1,6 +1,25 @@
 .header {
-    padding: 35px 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: $white;
     border-bottom: 1px solid $gray;
+    padding: 35px 0;
+    z-index: 2;
+    transition: padding .3s;
+
+    &__sticky {
+        padding: 5px 0;
+    }
+
+    @include mq('tablet-2') {
+        padding: 20px 20px;
+    }
+
+    @include mq('tablet') {
+        padding: 10px 20px;
+    }
 }
 
 .menu {
@@ -8,21 +27,55 @@
     grid-template-columns: repeat(3, 1fr);
     align-items: center;
     justify-content: space-between;
+    white-space: nowrap;
+
+    &__link {
+        &:hover {
+            @include mq('tablet-2') {
+                color: $primary;
+            }
+        }
+    }
+
 
     &__list {
         display: flex;
         font-size: 16px;
+        font-weight: 500;
+
+        @include mq('tablet-2') {
+            display: none;
+        }
+
+        &--mobile {
+            display: block;
+            flex-direction: column;
+            margin-bottom: 20px;
+        }
     }
 
     &__item {
         &:not(:last-child) {
             margin-right: 50px;
         }
+
+        &--mobile {
+            padding: 7px 0;
+        }
     }
 
     &__logo {
         margin: 0 auto;
+        z-index: 3;
         transition: transform .5s;
+
+        @include mq('tablet-2') {
+            width: 180px;
+        }
+
+        @include mq('tablet') {
+            width: 105px;
+        }
 
         &:focus {
             outline: transparent;
@@ -36,6 +89,15 @@
             transform: scale(0.9);
         }
     }
+
+    &__logo {
+        img {
+            @include mq('desktop') {
+                width: 200px;
+                height: auto;
+            }
+        }
+    }
 }
 
 .contacts {
@@ -44,9 +106,25 @@
     font-family: 'Roboto', sans-serif;
     font-weight: 400;
 
+    @include mq('tablet-2') {
+        display: none;
+    }
+
+    &--mobile {
+        display: block;
+        flex-direction: column;
+        margin: auto 0 45px;
+    }
+
     &__item {
         &:not(:last-child) {
             margin-right: 30px;
+        }
+
+        &--mobile {
+            &:not(:last-child) {
+                margin-bottom: 10px;
+            }
         }
     }
 

@@ -2,11 +2,24 @@
     background-image: url('../images/pattern-bg.svg');
     padding: 100px 0 80px;
 
+    @include mq('tablet') {
+        padding: 50px 0 50px;
+    }
+
     &__text {
         position: relative;
         max-width: 1060px;
         padding-left: 120px;
         margin: 0 auto;
+
+        @include mq('tablet-2') {
+            padding-left: 90px;
+        }
+
+        @include mq('phone') {
+            padding-top: 65px;
+            padding-left: 20px;
+        }
 
         &::before {
             content: "";
@@ -17,6 +30,18 @@
             height: 90px;
             mask-image: url('../images/sprite.svg#quote-icon');
             background-color: $icon;
+
+            @include mq('tablet-2') {
+                width: 60px;
+                height: 60px
+            }
+
+            @include mq('phone') {
+                top: 0;
+                left: 20px;
+                width: 50px;
+                height: 50px;
+            }
         }
     }
 

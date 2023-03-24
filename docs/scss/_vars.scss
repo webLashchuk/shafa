@@ -8,6 +8,29 @@ $purple: #f8f4ff;
 $icon: #dfd8ec;
 $white: #ffffff;
 $darkGrey: #79797b;
+$reviews: #288ff4;
+$mobileTitle: #d7d7d7;
+$dots: #9983bf;
+$grayDots: #f1f1f1;
+
+$breakpoints: (
+  "phone-2": 375px,
+  "phone": 560px,
+  "tablet": 768px,
+  "tablet-2": 992px,
+  "desktop": 1440px
+);
+@mixin mq($width, $type: max) {
+  @if map_has_key($breakpoints, $width) {
+   $width: map_get($breakpoints, $width);
+   @if $type == min {
+    $width: $width - 1px;
+   }
+   @media only screen and (#{$type}-width: $width) {
+    @content;
+   }
+  }
+}
 
 %pseudo {
     content: "";
@@ -29,4 +52,13 @@ $darkGrey: #79797b;
     width: 100%;
     height: 1px;
     border-top: 2px dashed $white;
+    
+    @include mq('desktop') {
+      max-width: 65px;
+  }
+
+    @include mq('tablet-2') {
+      display: none;
+  }
 }
+

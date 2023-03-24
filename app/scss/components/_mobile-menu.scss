@@ -1,0 +1,63 @@
+.mobile-menu {
+    display: none;
+
+    @include mq('desktop') {
+        display: block;
+    }
+
+    &__wrapper {
+        @include mq('desktop') {
+            display: block;
+            position: fixed;
+            width: 80%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            transform: translateX(-200%);
+            background-color: $white;
+            overflow: auto;
+            z-index: 4;
+            transition: transform .7s;
+
+            &::-webkit-scrollbar {
+                width: 0;
+            }
+
+            &.mobile-menu__wrapper--active {
+                transform: translateX(0);
+            }
+        }
+    }
+
+    &__inner {
+        display: flex;
+        flex-direction: column;
+        height: calc(100% - 95px);
+        padding: 20px;
+
+        @include mq('tablet-2') {
+            height: calc(100% - 90px);
+        }
+
+        @include mq('tablet') {
+            height: calc(100% - 70px);
+        }
+    }
+
+    &__header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 40px 0 0;
+        border-bottom: 1px solid $gray;
+        padding: 10px;
+        margin-bottom: 20px;
+    }
+
+    &__title {
+        font-size: 30px;
+        color: $mobileTitle;
+        text-align: left;
+        margin-bottom: 25px;
+    }
+}

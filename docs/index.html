@@ -10,42 +10,96 @@
 </head>
 
 <body>
-
     <header class="header">
         <div class="container">
             <nav class="menu">
                 <ul class="menu__list">
                     <li class="menu__item">
-                        <a class="menu__link" href="#">
+                        <a class="link menu__link" href="#catalog">
                             Каталог
                         </a>
                     </li>
                     <li class="menu__item">
-                        <a class="menu__link" href="#">
+                        <a class="link menu__link" href="#delivery">
                             Доставка и оплата
                         </a>
                     </li>
                     <li class="menu__item">
-                        <a class="menu__link" href="#">
+                        <a class="link menu__link" href="#reviews">
                             Отзывы
                         </a>
                     </li>
                 </ul>
+
+                <button class="burger burger--open" type="button">
+                    <span class="burger__line"></span>
+                    <span class="sr-only">Открыть меню</span>
+                </button>
+
                 <a class="logo menu__logo" href="#">
                     <img src="images/logo.svg" width="243" height="80" alt="Логотип Odetto">
                 </a>
                 <ul class="contacts">
                     <li class="contacts__item">
-                        <a class="contacts__link" href="tel:0956435507">
+                        <a class="link contacts__link" href="tel:0956435507">
                             085 643-55-07
                         </a>
                     </li>
                     <li class="contacts__item">
-                        <a class="contacts__link" href="tel:0856430007">
+                        <a class="link contacts__link" href="tel:0856430007">
                             085 643-00-07
                         </a>
                     </li>
                 </ul>
+            </nav>
+
+            <nav class="mobile-menu">
+                <div class="overlay"></div>
+                <div class="mobile-menu__wrapper">
+                    <header class="mobile-menu__header">
+                        <button class="burger burger--close" type="button">
+                            <span class="sr-only">Закрыть меню</span>
+                        </button>
+                        <a class="logo menu__logo" href="#">
+                            <img src="images/logo.svg" width="243" height="80" alt="Логотип Odetto">
+                        </a>
+                    </header>
+                    <div class="mobile-menu__inner">
+                        <h2 class="title mobile-menu__title">Меню</h2>
+                        <ul class="menu__list menu__list--mobile">
+                            <li class="menu__item menu__item--mobile">
+                                <a class="link menu__link" href="#catalog">
+                                    Каталог
+                                </a>
+                            </li>
+                            <li class="menu__item menu__item--mobile">
+                                <a class="link menu__link" href="#delivery">
+                                    Доставка и оплата
+                                </a>
+                            </li>
+                            <li class="menu__item menu__item--mobile">
+                                <a class="link menu__link" href="#reviews">
+                                    Отзывы
+                                </a>
+                            </li>
+                        </ul>
+                        <ul class="contacts contacts--mobile">
+                            <li class="contacts__item contacts__item--mobile">
+                                <a class="link contacts__link" href="tel:0956435507">
+                                    085 643-55-07
+                                </a>
+                            </li>
+                            <li class="contacts__item contacts__item--mobile">
+                                <a class="link contacts__link" href="tel:0856430007">
+                                    085 643-00-07
+                                </a>
+                            </li>
+                        </ul>
+                        <div class="rights">
+                            &#169; Shafa 2020
+                        </div>
+                    </div>
+                </div>
             </nav>
         </div>
     </header>
@@ -62,7 +116,7 @@
                         <p class="hero__offer">
                             Закажите прямо сейчас, получите скидку до 20%
                         </p>
-                        <button class="button" type="button">Перейти в каталог</button>
+                        <a class="button" href="#catalog">Перейти в каталог</a>
                         <p class="hero__trigger">* Количество товара ограничено</p>
                     </div>
                     <img class="hero__img" src="images/hero-img.jpg" width="630" height="900" alt="Пижама синего цвета">
@@ -75,48 +129,62 @@
                 <h2 class="title features__title">
                     Наши преимущества
                 </h2>
-                <ul class="features__list">
-                    <li class="features__item">
-                        <h3 class="features__caption">
-                            Качественный сервис
-                        </h3>
-                        <p class="features__text">
-                            Задайте вопросы по ассортименту магазина нашему менеджеру и получите на них корректные
-                            ответы
-                        </p>
-                    </li>
-                    <li class="features__item">
-                        <h3 class="features__caption">
-                            Оперативная доставка
-                        </h3>
-                        <p class="features__text">
-                            Закажите быструю доставку покупок в течение 2-х дней с помощью транспортной компании
-                            «Новая почта»
-                        </p>
-                    </li>
-                    <li class="features__item">
-                        <h3 class="features__caption">
-                            Безопасные покупки
-                        </h3>
-                        <p class="features__text">
-                            Оплата производится при получении посылки на почте. В случае если одежда не подошла по
-                            цвету, размеру, фасону - у нас возможен обмен и возврат товаров
-                        </p>
-                    </li>
-                    <li class="features__item">
-                        <h3 class="features__caption">
-                            Качественные товары
-                        </h3>
-                        <p class="features__text">
-                            Приобретайте одежду действительно высокого качества: мы уделяем особое внимание тканям и
-                            фурнитуре
-                        </p>
-                    </li>
-                </ul>
+                <div class="features__inner swiper">
+                    <ul class="features__list swiper-wrapper">
+                        <li class="features__item swiper-slide">
+                            <div class="features__article">
+                                <h3 class="features__caption">
+                                    Качественный сервис
+                                </h3>
+                                <p class="features__text">
+                                    Задайте вопросы по ассортименту магазина нашему менеджеру и получите на них
+                                    корректные
+                                    ответы
+                                </p>
+                            </div>
+                        </li>
+                        <li class="features__item swiper-slide">
+                            <div class="features__article">
+                                <h3 class="features__caption">
+                                    Оперативная доставка
+                                </h3>
+                                <p class="features__text">
+                                    Закажите быструю доставку покупок в течение 2-х дней с помощью транспортной компании
+                                    «Новая почта»
+                                </p>
+                            </div>
+                        </li>
+                        <li class="features__item swiper-slide">
+                            <div class="features__article">
+                                <h3 class="features__caption">
+                                    Безопасные покупки
+                                </h3>
+                                <p class="features__text">
+                                    Оплата производится при получении посылки на почте. В случае если одежда не подошла
+                                    по
+                                    цвету, размеру, фасону - у нас возможен обмен и возврат товаров
+                                </p>
+                            </div>
+                        </li>
+                        <li class="features__item swiper-slide">
+                            <div class="features__article">
+                                <h3 class="features__caption">
+                                    Качественные товары
+                                </h3>
+                                <p class="features__text">
+                                    Приобретайте одежду действительно высокого качества: мы уделяем особое внимание
+                                    тканям и
+                                    фурнитуре
+                                </p>
+                            </div>
+                        </li>
+                    </ul>
+                    <div class="features__pagination swiper-pagination"></div>
+                </div>
             </div>
         </section>
 
-        <section class="service">
+        <section class="service" style="background-image: url('images/service-bg.jpg');" id="delivery">
             <div class="container">
                 <div class="title service__title">
                     Как мы работаем
@@ -168,19 +236,17 @@
             </div>
         </article>
 
-        <section class="catalog">
-            <div class="container">
+        <section class="catalog" id="catalog">
+            <div class="container catalog__container">
                 <h2 class="title catalog__title">Каталог</h2>
                 <ul class="catalog__list">
+
                     <li class="catalog__item">
                         <article class="product">
                             <div class="product__wrapper">
                                 <div class="slider">
                                     <div class="slider__flex">
                                         <div class="slider__col">
-
-                                            <div class="slider__prev"></div>
-                                            <!-- Кнопка для переключения на предыдущий слайд -->
 
                                             <div class="slider__thumbs swiper">
                                                 <div class="swiper-wrapper">
@@ -210,15 +276,14 @@
                                                                 alt="Синяя пижама" /></div>
                                                     </div>
                                                 </div>
+                                                <div class="slider__prev"></div>
+                                                <div class="slider__next"></div>
                                             </div>
-
-                                            <div class="slider__next"></div>
-                                            <!-- Кнопка для переключения на следующий слайд -->
 
                                         </div>
 
                                         <div class="slider__images swiper">
-                                            <div class="swiper-wrapper">
+                                            <div class="slider__wrapper swiper-wrapper">
                                                 <div class="swiper-slide">
                                                     <div class="slider__image"><img src="images/product/blue-first.jpg"
                                                             alt="Синяя пижама" /></div>
@@ -240,6 +305,8 @@
                                                             alt="Синяя пижама" /></div>
                                                 </div>
                                             </div>
+                                            <div class="slider__img-prev"></div>
+                                            <div class="slider__img-next"></div>
                                         </div>
 
                                     </div>
@@ -258,7 +325,7 @@
                                                     <span class="product__offer-red">25%</span>
                                                 </span>
                                             </div>
-                                            <button class="button" type="btn">Оформить заказ</button>
+                                            <button class="button product__button" type="submit">Оформить заказ</button>
                                         </div>
                                         <h4 class="product__size-title">Размер</h4>
                                         <ul class="product__filter">
@@ -299,7 +366,7 @@
                                             </li>
                                         </ul>
                                     </form>
-                                    <span class="product__size">
+                                    <span class="link product__size">
                                         Размерная сетка
                                     </span>
                                     <h4 class="product__material-title">Материал</h4>
@@ -314,9 +381,6 @@
                                 <div class="slider">
                                     <div class="slider__flex">
                                         <div class="slider__col">
-
-                                            <div class="slider__prev"></div>
-                                            <!-- Кнопка для переключения на предыдущий слайд -->
 
                                             <div class="slider__thumbs swiper">
                                                 <div class="swiper-wrapper">
@@ -346,15 +410,14 @@
                                                                 alt="Синяя пижама" /></div>
                                                     </div>
                                                 </div>
+                                                <div class="slider__prev"></div>
+                                                <div class="slider__next"></div>
                                             </div>
-
-                                            <div class="slider__next"></div>
-                                            <!-- Кнопка для переключения на следующий слайд -->
 
                                         </div>
 
                                         <div class="slider__images swiper">
-                                            <div class="swiper-wrapper">
+                                            <div class="slider__wrapper swiper-wrapper">
                                                 <div class="swiper-slide">
                                                     <div class="slider__image"><img src="images/product/blue-first.jpg"
                                                             alt="Синяя пижама" /></div>
@@ -376,6 +439,8 @@
                                                             alt="Синяя пижама" /></div>
                                                 </div>
                                             </div>
+                                            <div class="slider__img-prev"></div>
+                                            <div class="slider__img-next"></div>
                                         </div>
 
                                     </div>
@@ -394,7 +459,7 @@
                                                     <span class="product__offer-red">25%</span>
                                                 </span>
                                             </div>
-                                            <button class="button" type="btn">Оформить заказ</button>
+                                            <button class="button product__button" type="submit">Оформить заказ</button>
                                         </div>
                                         <h4 class="product__size-title">Размер</h4>
                                         <ul class="product__filter">
@@ -435,7 +500,7 @@
                                             </li>
                                         </ul>
                                     </form>
-                                    <span class="product__size">
+                                    <span class="link product__size">
                                         Размерная сетка
                                     </span>
                                     <h4 class="product__material-title">Материал</h4>
@@ -450,9 +515,6 @@
                                 <div class="slider">
                                     <div class="slider__flex">
                                         <div class="slider__col">
-
-                                            <div class="slider__prev"></div>
-                                            <!-- Кнопка для переключения на предыдущий слайд -->
 
                                             <div class="slider__thumbs swiper">
                                                 <div class="swiper-wrapper">
@@ -482,15 +544,14 @@
                                                                 alt="Синяя пижама" /></div>
                                                     </div>
                                                 </div>
+                                                <div class="slider__prev"></div>
+                                                <div class="slider__next"></div>
                                             </div>
-
-                                            <div class="slider__next"></div>
-                                            <!-- Кнопка для переключения на следующий слайд -->
 
                                         </div>
 
                                         <div class="slider__images swiper">
-                                            <div class="swiper-wrapper">
+                                            <div class="slider__wrapper swiper-wrapper">
                                                 <div class="swiper-slide">
                                                     <div class="slider__image"><img src="images/product/blue-first.jpg"
                                                             alt="Синяя пижама" /></div>
@@ -512,6 +573,8 @@
                                                             alt="Синяя пижама" /></div>
                                                 </div>
                                             </div>
+                                            <div class="slider__img-prev"></div>
+                                            <div class="slider__img-next"></div>
                                         </div>
 
                                     </div>
@@ -530,7 +593,7 @@
                                                     <span class="product__offer-red">25%</span>
                                                 </span>
                                             </div>
-                                            <button class="button" type="btn">Оформить заказ</button>
+                                            <button class="button product__button" type="submit">Оформить заказ</button>
                                         </div>
                                         <h4 class="product__size-title">Размер</h4>
                                         <ul class="product__filter">
@@ -571,7 +634,7 @@
                                             </li>
                                         </ul>
                                     </form>
-                                    <span class="product__size">
+                                    <span class="link product__size">
                                         Размерная сетка
                                     </span>
                                     <h4 class="product__material-title">Материал</h4>
@@ -580,43 +643,344 @@
                             </div>
                         </article>
                     </li>
+                </ul>
+            </div>
+        </section>
 
+        <section class="service service--quote" style="background-image: url('images/girl-shine.jpg');">
+            <div class="container">
+                <div class="service__slogan">
+                    <p>
+                        Купить одежду как с обложки журнала – фасон, посадка, качественные ткани, но при этом по низкой
+                        цене? Это возможно с нами!
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section class="reviews" id="reviews">
+            <div class="container reviews__container">
+                <h2 class="title reviews__title">
+                    Отзывы покупательниц
+                </h2>
+                <div class="reviews__wrapper reviews__wrapper--desktop">
+                    <ul class="reviews__list reviews__list">
+                        <li class="reviews__item reviews__item--left">
+                            <article class="reviews__article reviews__article--left">
+                                <blockquote>
+                                    Сегодня я получила заказ для своей дочери и сразу пишу отзыв. Качество материала
+                                    хорошее, по
+                                    фигурке село в самый раз, но слегка длинновато на ее невысокий рост. Это не страшно,
+                                    просто
+                                    для девочки подходит не всякая длинна, я смогу поправить, а для девушек постарше все
+                                    ок
+                                    будет, думаю. Спасибо
+                                </blockquote>
+                                <span class="reviews__author">
+                                    Иванка Н., Кривой Рог
+                                </span>
+                                <span class="reviews__icon"
+                                    style="background-image: url('images/sprite.svg#lower-icon')"></span>
+                            </article>
+                        </li>
+                        <li class="reviews__item">
+                            <article class="reviews__article">
+                                <blockquote>
+                                    Я наверное вообще пещерный человек, но впервые заказываю одежду в интернете (а
+                                    некоторые
+                                    даже жениться по интернету умудряются!). Все боялась, что размер не подойдет, что
+                                    зря
+                                    потрачу деньги. Оставляю вам свой отзыв абсолютно добровольно! Заказала - мне
+                                    позвонил
+                                    менеджер и уточнил заказ - через 2 дня (вечером второго дня смс пришла о посылке, но
+                                    у
+                                    меня
+                                    не получилось на почту успеть) пришла за посылкой - осмотрела - оплатила товар. Все
+                                    супер!
+                                </blockquote>
+                                <span class="reviews__author">
+                                    Людмила, Одесса
+                                </span>
+                                <span class="reviews__icon"
+                                    style="background-image: url('images/sprite.svg#kiss-icon')"></span>
+                            </article>
+                        </li>
+                        <li class="reviews__item reviews__item--left">
+                            <article class="reviews__article reviews__article--left">
+                                <blockquote>
+                                    Спасибо большое. Потрясающе село по фигуре и смотрится великолепно)) Посоветовала
+                                    вас
+                                    своей
+                                    подруге, целый час сидели и обсуждали модельки, выбрали и для нее, но ей только
+                                    завтра
+                                    должно прийти.
+                                </blockquote>
+                                <span class="reviews__author">
+                                    Анастасия, Киев
+                                </span>
+                                <span class="reviews__icon"
+                                    style="background-image: url('images/sprite.svg#hungry-icon')"></span>
+                            </article>
+                        </li>
+                        <li class="reviews__item">
+                            <article class="reviews__article">
+                                <blockquote>
+                                    Очень хорошие модельки, я даже не могла выбрать, какая мне больше нравится, пришлось
+                                    просить
+                                    помощи у мужа. Спасибо девочке-менеджеру, которая смогла мне помочь с размерной
+                                    сеткой,
+                                    точнее подсказала, как правильно себя измерить, чтобы не промахнуться с сеткой.
+                                    Доставка
+                                    быстрая, всего 1,5 дня, осталась всем довольна.
+                                </blockquote>
+                                <span class="reviews__author">
+                                    Анна, Одесса
+                                </span>
+                                <span class="reviews__icon"
+                                    style="background-image: url('images/sprite.svg#money-icon')"></span>
+                            </article>
+                        </li>
+                        <li class="reviews__item reviews__item--left">
+                            <article class="reviews__article reviews__article--left">
+                                <blockquote>
+                                    Сегодня я получила заказ для своей дочери и сразу пишу отзыв. Качество материала
+                                    хорошее, по
+                                    фигурке село в самый раз, но слегка длинновато на ее невысокий рост. Это не страшно,
+                                    просто
+                                    для девочки подходит не всякая длинна, я смогу поправить, а для девушек постарше все
+                                    ок
+                                    будет, думаю. Спасибо
+                                </blockquote>
+                                <span class="reviews__author">
+                                    Евгения, Киев
+                                </span>
+                                <span class="reviews__icon"
+                                    style="background-image: url('images/sprite.svg#sleep-icon')"></span>
+                            </article>
+                        </li>
+                    </ul>
+                </div>
+                <div class="reviews__wrapper reviews__wrapper--mobile swiper">
+                    <ul class="reviews__list swiper-wrapper">
+                        <li class="reviews__item reviews__item--left swiper-slide">
+                            <article class="reviews__article">
+                                <blockquote>
+                                    Сегодня я получила заказ для своей дочери и сразу пишу отзыв. Качество материала
+                                    хорошее, по
+                                    фигурке село в самый раз, но слегка длинновато на ее невысокий рост. Это не страшно,
+                                    просто
+                                    для девочки подходит не всякая длинна, я смогу поправить, а для девушек постарше все
+                                    ок
+                                    будет, думаю. Спасибо
+                                </blockquote>
+                                <span class="reviews__author">
+                                    Иванка Н., Кривой Рог
+                                </span>
+                                <span class="reviews__icon"
+                                    style="background-image: url('images/sprite.svg#lower-icon')"></span>
+                            </article>
+                        </li>
+                        <li class="reviews__item swiper-slide">
+                            <article class="reviews__article">
+                                <blockquote>
+                                    Я наверное вообще пещерный человек, но впервые заказываю одежду в интернете (а
+                                    некоторые
+                                    даже жениться по интернету умудряются!). Все боялась, что размер не подойдет, что
+                                    зря
+                                    потрачу деньги. Оставляю вам свой отзыв абсолютно добровольно! Заказала - мне
+                                    позвонил
+                                    менеджер и уточнил заказ - через 2 дня (вечером второго дня смс пришла о посылке, но
+                                    у меня
+                                    не получилось на почту успеть) пришла за посылкой - осмотрела - оплатила товар. Все
+                                    супер!
+                                </blockquote>
+                                <span class="reviews__author">
+                                    Людмила, Одесса
+                                </span>
+                                <span class="reviews__icon"
+                                    style="background-image: url('images/sprite.svg#kiss-icon')"></span>
+                            </article>
+                        </li>
+                        <li class="reviews__item reviews__item--left swiper-slide">
+                            <article class="reviews__article">
+                                <blockquote>
+                                    Спасибо большое. Потрясающе село по фигуре и смотрится великолепно)) Посоветовала
+                                    вас своей
+                                    подруге, целый час сидели и обсуждали модельки, выбрали и для нее, но ей только
+                                    завтра
+                                    должно прийти.
+                                </blockquote>
+                                <span class="reviews__author">
+                                    Анастасия, Киев
+                                </span>
+                                <span class="reviews__icon"
+                                    style="background-image: url('images/sprite.svg#hungry-icon')"></span>
+                            </article>
+                        </li>
+                        <li class="reviews__item swiper-slide">
+                            <article class="reviews__article">
+                                <blockquote>
+                                    Очень хорошие модельки, я даже не могла выбрать, какая мне больше нравится, пришлось
+                                    просить
+                                    помощи у мужа. Спасибо девочке-менеджеру, которая смогла мне помочь с размерной
+                                    сеткой,
+                                    точнее подсказала, как правильно себя измерить, чтобы не промахнуться с сеткой.
+                                    Доставка
+                                    быстрая, всего 1,5 дня, осталась всем довольна.
+                                </blockquote>
+                                <span class="reviews__author">
+                                    Анна, Одесса
+                                </span>
+                                <span class="reviews__icon"
+                                    style="background-image: url('images/sprite.svg#money-icon')"></span>
+                            </article>
+                        </li>
+                        <li class="reviews__item reviews__item--left swiper-slide">
+                            <article class="reviews__article">
+                                <blockquote>
+                                    Сегодня я получила заказ для своей дочери и сразу пишу отзыв. Качество материала
+                                    хорошее, по
+                                    фигурке село в самый раз, но слегка длинновато на ее невысокий рост. Это не страшно,
+                                    просто
+                                    для девочки подходит не всякая длинна, я смогу поправить, а для девушек постарше все
+                                    ок
+                                    будет, думаю. Спасибо
+                                </blockquote>
+                                <span class="reviews__author">
+                                    Евгения, Киев
+                                </span>
+                                <span class="reviews__icon"
+                                    style="background-image: url('images/sprite.svg#sleep-icon')"></span>
+                            </article>
+                        </li>
+                    </ul>
+                    <div class="reviews__pagination swiper-pagination"></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="question">
+            <div class="container">
+                <h2 class="title question__title">Часто задаваемые вопросы</h2>
+                <ul class="question__list">
+                    <li class="question__item">
+                        <h3 class="question__caption">
+                            Как мне понять, какой мне нужен размер?
+                        </h3>
+                        <p>
+                            Мы заинтересованы в том, чтобы возвратов из-за неправильного определения размеров одежды
+                            было как можно меньше. Потому в каждой карточке товара есть размерная сетка, которая
+                            относится к конкретной модели
+                        </p>
+                    </li>
+                    <li class="question__item">
+                        <h3 class="question__caption">
+                            В какие города осуществляется доставка?
+                        </h3>
+                        <p>
+                            Доставка осуществляется во все города Украины, где работают отделения “Новой почты”
+                        </p>
+                    </li>
+                    <li class="question__item">
+                        <h3 class="question__caption">
+                            Как осуществляется оплата товара?
+                        </h3>
+                        <p>
+                            Оплата товара осуществляется в отделениях “Новой почты” после его получения и осмотра
+                        </p>
+                    </li>
+                    <li class="question__item">
+                        <h3 class="question__caption">
+                            В течение какого времени осуществляется обмен товара?
+                        </h3>
+                        <p>
+                            Обмен товара производится в течение 1-2 дней после получения нашими сотрудниками
+                            неподошедшей
+                            модели
+                        </p>
+                    </li>
+                    <li class="question__item">
+                        <h3 class="question__caption">
+                            Как быстро осуществляется доставка товара?
+                        </h3>
+                        <p>
+                            Вы получите заказанный товар в течение двух дней
+                        </p>
+                    </li>
+                    <li class="question__item">
+                        <h3 class="question__caption">
+                            Можно ли на почте посмотреть заказ перед тем, как его оплачивать?
+                        </h3>
+                        <p>
+                            Конечно, вы можете осмотреть товар при получении в отделении “Новой почты”.
+                        </p>
+                    </li>
+                    <li class="question__item">
+                        <h3 class="question__caption">
+                            Можно ли вернуть товар, если он не подошел по размеру?
+                        </h3>
+                        <p>
+                            Да, вы можете осуществить возврат товара в течение 14 дней
+                        </p>
+                    </li>
+                    <li class="question__item">
+                        <h3 class="question__caption">
+                            В течение какого времени осуществляется возврат денежных средств за товар?
+                        </h3>
+                        <p>
+                            В случае возврата товара мы вернем вам деньги на карту любого банка в течение 3-7 дней.
+                        </p>
+                    </li>
+                    <li class="question__item">
+                        <h3 class="question__caption">
+                            У меня другой вопрос, кому мне его задать?
+                        </h3>
+                        <p>
+                            Оставьте свой номер телефона в форме заказа, мы перезвоним вам и ответим на все ваши
+                            вопросы
+                        </p>
+                    </li>
                 </ul>
             </div>
         </section>
         <section class="callback">
-            <div class="container">
+            <div class="container callback__container">
                 <div class="callback__wrapper">
                     <div class="callback__inner">
-                        <h2 class="callback__title">
+                        <h2 class="title callback__title">
                             У меня есть вопрос! Хочу с Вами поговорить!
                         </h2>
                         <p class="callback__text">
                             Оставьте номер телефона и мы свяжемся с Вами прямо сейчас!
                         </p>
                     </div>
-                    <form class="callback__form" action="#">
-                        <div class="callback__item">
-                            <label class="callback__label" for="name"></label>
-                            <input class="callback__field" type="text" id="name" name="name" placeholder="Ваше имя"
-                                required="required">
+                    <form class="form" action="#">
+                        <div class="form__list">
+                            <div class="form__item">
+                                <label class="form__label" for="name"></label>
+                                <input class="form__field" type="text" id="name" name="name" placeholder="Ваше имя"
+                                    required="required">
+                            </div>
+                            <div class="form__item">
+                                <label class="form__label" for="tel"></label>
+                                <input class="form__field" type="tel" id="tel" name="tel" placeholder="Номер телефона"
+                                    required="required">
+                            </div>
                         </div>
-                        <div class="callback__item">
-                            <label class="callback__label" for="tel"></label>
-                            <input class="callback__field" type="tel" id="tel" name="tel" placeholder="Номер телефона"
-                                required="required">
-                        </div>
-                        <button class="button" type="submit">Оставить заявку</button>
+                        <button class="button" type="submit">
+                            Оставить заявку
+                        </button>
                     </form>
                 </div>
             </div>
         </section>
-
+        
+        <div class="background-img"  style="background-image: url('images/main-bg.jpg');"></div>
     </main>
-
+    
     <footer class="footer">
         <div class="container">
-            <div class="footer__rights">
+            <div class="rights">
                 &#169; Shafa 2020
             </div>
         </div>

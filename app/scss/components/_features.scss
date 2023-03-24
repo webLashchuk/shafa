@@ -1,10 +1,27 @@
 .features {
     padding-bottom: 90px;
-    
+
+    @include mq('phone') {
+        padding-bottom: 60px;
+    }
+
     &__container {
         position: relative;
         padding: 80px 0 50px;
         border: 2px dashed $purple;
+
+        @include mq('desktop') {
+            padding: 50px 0;
+        }
+
+        @include mq('tablet-2') {
+            padding: 30px 0 50px;
+        }
+
+        @include mq('phone') {
+            padding: 15px 0 0;
+            border-color: transparent;
+        }
     }
 
     &__title {
@@ -14,15 +31,38 @@
         transform: translateX(-50%);
         background-color: $white;
         padding: 20px 30px;
+
+        @include mq('desktop') {
+            position: relative;
+        }
+
+        @include mq('phone') {
+            position: relative;
+            max-width: 300px;
+            text-align: center;
+            padding: 0;
+        }
+    }
+
+    &__inner {
+        max-width: 1440px;
+
+        @include mq('desktop') {
+            padding: 0 20px;
+        }
+
+        @include mq('tablet-2') {
+            max-width: 700px;
+        }
     }
 
     &__list {
-        display: flex;
-        justify-content: space-between;
+        margin-bottom: 60px;
     }
 
-    &__item {
+    &__article {
         max-width: 288px;
+        margin: 0 auto;
     }
 
     &__caption {
@@ -49,5 +89,21 @@
         background-color: $purple;
         font-size: 16px;
         padding: 15px 20px;
+    }
+
+    &__bullet {
+        display: inline-block;
+        width: 13px;
+        height: 13px;
+        border-radius: 50%;
+        background-color: $gray;
+
+        &--active {
+            background-color: $dots;
+        }
+
+        &:not(:last-child) {
+            margin-right: 10px;
+        }
     }
 }
